@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+// Procedimento para tabuada de soma (sem retorno)
+void soma(int num) {
+    for (int i = 1; i <= 10; i++) {
+        cout << num << " + " << i << " = " << num + i << endl;
+    }
+}
+
+// Procedimento para tabuada de subtração (sem retorno)
+void sub(int num) {
+    for (int i = 1; i <= 10; i++) {
+        cout << num << " - " << i << " = " << num - i << endl;
+    }
+}
+
+// Procedimento para tabuada de multiplicação (sem retorno)
+void multi(int num) {
+    for (int i = 1; i <= 10; i++) {
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+}
+
+// Procedimento para tabuada de divisão (sem retorno)
+void div(int num) {
+    for (int i = 1; i <= 10; i++) {
+        cout << num << " / " << i << " = " << (float)num / i << endl;
+    }
+}
+
+// Função principal com passagem de parâmetro
+void principal(int num) {
+    char operacao;
+
+    cout << "Escolha a operação: \n1 - SOMA \n2 - SUBTRACAO \n3 - MULTIPLICACAO \n4 - DIVISAO: \n";
+    cin >> operacao;
+
+    switch (operacao) {
+        case '1':
+            soma(num);
+            break;
+        case '2':
+            sub(num);
+            break;
+        case '3':
+            multi(num);
+            break;
+        case '4':
+            div(num);
+            break;
+        default:
+            cout << "Operação inválida." << endl;
+    }
+}
+
+int main() {
+    int num;
+    cout << "Digite um número inteiro: ";
+    cin >> num;
+    principal(num);
+    return 0;
+}
